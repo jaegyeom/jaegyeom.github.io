@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+<link rel="stylesheet" href="mvp.css">
+<title>Troubleshooting Lag</title>
+</head>
+<body>
+
+<h1>Reduce/Fix Video Game Lags</h1>
+<p>Lag, is generally known as the phonemana when a game fails to respond to inputs within expected time. As most gamers are aware of, It causes extreme inconvenience when playing online multiplayer games. It can lead to losing a game, or even worse, disconnecting from the server. To become free from lag, you must know what lag is and how to diagnose lag.</p>
+
+<h3>The Two Main Types of Lag</h3>
+<p>Latency Lag - lag caused due to network issues</p>
+<p>Graphics Lag - lag caused due to insufficient processing power</p>
+<hr>
+
+<h2>How Muliplayer Games Work</h2>
+<p>Before diving further into the topic, you should first know how the multiplayer games work.</p>
+<p>Online multiplayer games adapt the client-server model (clients and servers are just computers that have special software installed in order to exchange information). The centralized server is responsible for facilitating communication and synchronizing game state. Clients (users) send inputs like keystrokes, mouse movements, and clicks to the server. The server processes the input and updates the state of each player's character in the game world, and sends back the information about the current state of the game to all the clients. The clients then display the updated game.</p>
+<hr>
+
+<h2>Graphics Lag</h2>
+<p>By definition, having low Frames Per Second (FPS) indicates the occurrence of graphics lag.</p>
+<p>Possible Solutions:</p>
+<ul>
+<li><strong>Reduce the graphics resolution or framerate</strong></li>
+<li><strong>Clean computer of dust:</strong> Use a microfiber cloth and disinfectant. You should clean your computer once or twice a year</li>
+<li><strong>Upgrade graphics card:</strong> Nvidia and AMD are good choices</li>
+</ul>
+<hr>
+
+<h2>Latency Lag</h2>
+<p>The problem with networked games is that the data (which we call packets) has to travel to the server and come back to the client. Generally, the latency lag is the result of high latency (the time it takes for a packet to travel between client and server).</p>
+
+<h3>Identifying the Root Cause</h3>
+<h4>Ping</h4>
+<p>To reduce the latency lag, you first have to know what's causing the lag. The ping command is a good place to start.</p>
+<p>Ping is a useful software utility that allows you to test the status of the host (a computer connected to the network).</p>
+<p>Type the following command in Windows cmd or Mac terminal</p>
+<pre>
+ping -n (-c on Mac) {number of packets} {destination}
+</pre>
+<p>The output would look something like this</p>
+<pre>
+64 bytes from 142.251.41.78: icmp_seq=0 ttl=117 time=19.262 ms
+64 bytes from 142.251.41.78: icmp_seq=1 ttl=117 time=14.422 ms
+64 bytes from 142.251.41.78: icmp_seq=2 ttl=117 time=21.963 ms
+64 bytes from 142.251.41.78: icmp_seq=3 ttl=117 time=15.727 ms
+64 bytes from 142.251.41.78: icmp_seq=4 ttl=117 time=22.808 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 14.422/18.836/22.808/3.313 ms
+</pre>
+<p>Common error messages:</p>
+<ul>
+<li><strong>Unknown host:</strong> If the IP address for the host you're pinging can't be resolved</li>
+<li><strong>Destination host unreachable:</strong> There's no route to destination</li>
+<li><strong>General failure error:</strong> Issue with wireless adaptor</li>
+<li><strong>Request timed out:</strong> No response was received from the host</li>
+</ul>
+<p>The second last line is the one we'll be focusing on. It says 0% packet loss, indicating that none of the packets were lost during the transmission. If there had been packet loss, it could have been due to issues such as DNS resolution failure, problems with the network interface card (NIC), a faulty Ethernet cable or port, and many more. Additional ping checks could be performed to narrow down the possibilities, but we're gonna stick with what we have for now.</p>
+<p>In the event of packet loss, followings can be done:</p>
+<ul>
+<li>Power cycle router (turning it off and on again)</li>
+<li>Switch to a wired connection using an ethernet cable</li>
+<li>Switch a ehternet cable to a different port</li>
+<li>Update router firmware and activate QoS (Quality of Service) from router setting</li>
+</ul>
+<p>You can access router setting by typing your router's IP address into your browser. This can usually be found in your router's manual</p>
+
+<h4>Tracert</h4>
+<p>Tracert is another useful tool. It can be used with ping to identify where the packet loss occurred and it can also be used to identify where the high latency is coming from.</p>
+<p>Type the following command in Windows cmd or Mac terminal.</p>
+<pre>
+tracert (traceroute on Mac) {destination}
+</pre>
+<p>The output would be similar to this</p>
+<pre>
+traceroute to google.com (142.251.32.78), 64 hops max, 52 byte packets
+ 1  10.0.0.1 (10.0.0.1)  4.413 ms  2.559 ms  2.720 ms
+ 2  99.254.154.1 (99.254.154.1)  11.865 ms  11.922 ms  13.424 ms
+ 3  8021-dgw01.nmkt.rmgt.net.rogers.com (24.156.143.161)  11.530 ms  12.179 ms  18.936 ms
+ 4  3023-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.61)  13.227 ms  10.803 ms
+    100-0-18-0-5-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.57)  14.904 ms
+ 5  209.148.235.222 (209.148.235.222)  15.530 ms  11.944 ms  15.025 ms
+ 6  * * *
+ 7  192.178.98.117 (192.178.98.117)  17.537 ms  13.949 ms
+    192.178.99.35 (192.178.99.35)  13.867 ms
+ 8  142.251.68.27 (142.251.68.27)  13.823 ms
+    142.251.68.25 (142.251.68.25)  16.988 ms
+    142.251.68.27 (142.251.68.27)  20.725 ms
+ 9  yyz12s07-in-f14.1e100.net (142.251.32.78)  16.165 ms  12.907 ms  12.461 ms
+</pre>
+<p>The first column represents the number of hops (a device that is on the path between the hosts). Sometimes you'll see that there are multiple devices for a single hop, that might mean there were multiple paths. The second column is the Ip address (address of the computer). The rest of the column represents the Round Trip Time (RTT). How long each packet takes to reach that device. Traceroute sends three packets to each hop by default.</p>
+<p>Common error messages:</p>
+<ul>
+<li><strong>Destination host unreachable</strong> (same as ping)</li>
+<li><strong>Request timed out</strong> (same as ping)</li>
+<li><strong>Asterisks:</strong> the hop did not respond within the specified time limit. This could indicate packet loss, so it can be used to identify the location of packet loss.</li>
+</ul>
+<p>Our main focus here is the RTT value. From looking at the RTT values, you may spot the sudden high latency or asterisks in a certain hop. This pattern indicates that the issue comes from the hop where the latency started to increase.</p>
+<p>The first one or two hops may show request timed out. This is normal since some routers are not configured to respond to traceroute request.</p>
+<p>If you see high latency in beginning hops, there may be an issue with your local network. The solutions for packet loss mentioned above can also be done here. Addition to that, you can also contact your ISP to see if there is any scheduled maintenance taking place and you can also check if anyone else is using the same network, and avoid playing online at the same time.</p>
+<p>If you see high latency in the middle hops, there might be issues with devices that are on the path between you and the server. In this case, you can use VPN to find different routes to the server. This may reduce lag.</p>
+<hr>
+
+<h2>Is Lag Always Fixable?</h2>
+<p>Unfortunately, sometimes the lag can be inevitable. If the server is responsible for the lag, there's not much we can do except to wait for a new patch.</p>
+<hr>
+
+<p>Please do note that there are so many possible causes of lag and all of them can't be covered in just one article. This article only addresses some of them, but introduces the ways to troubleshoot</p>
+
+</body>
+</html>

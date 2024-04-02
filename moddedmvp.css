@@ -211,7 +211,7 @@ p {
 
 pre {
     margin: auto;
-    max-width: var(--width-card-wide);
+    overflow-x: auto;
     padding: 1rem;
     background-color: #f0f0f0;
 }

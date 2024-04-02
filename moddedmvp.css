@@ -78,8 +78,9 @@ main {
 hr {
     background-color: #c1c1c1;
     border: none;
-    h
-    overflow: auto;
+    height: 2px;
+    margin: 4rem 0;
+    width: 100%
 }
 
 section aside {

@@ -53,7 +53,7 @@ ping -n (-c on Mac) {number of packets} {destination}
 64 bytes from 142.251.41.78: icmp_seq=4 ttl=117 time=22.808 ms
 
 --- google.com ping statistics ---
-5 packets transmitted, 5 packets received, <span><span style="color=#6C91C2">0.0% packet loss</span></span>
+5 packets transmitted, 5 packets received, <strong>0.0% packet loss</strong>
 round-trip min/avg/max/stddev = 14.422/18.836/22.808/3.313 ms
 </pre>
 <p>Common error messages:</p>
@@ -83,19 +83,19 @@ tracert (traceroute on Mac) {destination}
 <p>The output would be similar to this</p>
 <pre>
 traceroute to google.com (142.251.32.78), 64 hops max, 52 byte packets
- 1  10.0.0.1 (10.0.0.1)  4.413 ms  2.559 ms  2.720 ms
- 2  99.254.154.1 (99.254.154.1)  11.865 ms  11.922 ms  13.424 ms
- 3  8021-dgw01.nmkt.rmgt.net.rogers.com (24.156.143.161)  11.530 ms  12.179 ms  18.936 ms
- 4  3023-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.61)  13.227 ms  10.803 ms
-    100-0-18-0-5-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.57)  14.904 ms
- 5  209.148.235.222 (209.148.235.222)  15.530 ms  11.944 ms  15.025 ms
+ 1  10.0.0.1 (10.0.0.1)  <strong>4.413 ms  2.559 ms  2.720 ms</strong>
+ 2  99.254.154.1 (99.254.154.1)  <strong>11.865 ms  11.922 ms  13.424 ms</strong>
+ 3  8021-dgw01.nmkt.rmgt.net.rogers.com (24.156.143.161)  <strong>11.530 ms  12.179 ms  18.936 ms</strong>
+ 4  3023-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.61)  <strong>13.227 ms  10.803 ms</strong>
+    100-0-18-0-5-cgw01.mtnk.asr9k.rmgt.net.rogers.com (24.153.4.57)  <strong>14.904 ms</strong>
+ 5  209.148.235.222 (209.148.235.222)  <strong>15.530 ms  11.944 ms  15.025 ms</strong>
  6  * * *
- 7  192.178.98.117 (192.178.98.117)  17.537 ms  13.949 ms
-    192.178.99.35 (192.178.99.35)  13.867 ms
- 8  142.251.68.27 (142.251.68.27)  13.823 ms
-    142.251.68.25 (142.251.68.25)  16.988 ms
-    142.251.68.27 (142.251.68.27)  20.725 ms
- 9  yyz12s07-in-f14.1e100.net (142.251.32.78)  16.165 ms  12.907 ms  12.461 ms
+ 7  192.178.98.117 (192.178.98.117)  <strong>17.537 ms  13.949 ms</strong>
+    192.178.99.35 (192.178.99.35)  <strong>13.867 ms</strong>
+ 8  142.251.68.27 (142.251.68.27)  <strong>13.823 ms</strong>
+    142.251.68.25 (142.251.68.25)  <strong>16.988 ms</strong>
+    142.251.68.27 (142.251.68.27)  <strong>20.725 ms</strong>
+ 9  yyz12s07-in-f14.1e100.net (142.251.32.78)  <strong>16.165 ms  12.907 ms  12.461 ms</strong>
 </pre>
 <p>The first column represents the number of hops (a device that is on the path between the hosts). Sometimes you'll see that there are multiple devices for a single hop, that might mean there were multiple paths.<br>
  The second column is the Ip address (address of the computer).<br>

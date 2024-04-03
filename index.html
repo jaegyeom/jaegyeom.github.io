@@ -20,7 +20,7 @@
 <h2>How Muliplayer Games Work</h2>
 <img src="Figure1.png" width="700">
 <p>Before diving further into the topic, you should first know how the multiplayer games work.</p>
-<p>Online multiplayer games adapt the client-server model (clients and servers are just computers that have special software installed in order to exchange information). The centralized server is responsible for facilitating communication and synchronizing game state. Clients (users) send inputs like keystrokes, mouse movements, and clicks to the server. The server processes the input and updates the state of each player's character in the game world, and sends back the information about the current state of the game to all the clients. The clients then display the updated game.</p>
+<p>Online multiplayer games adapt the client-server model (<strong>clients</strong> and <strong>servers</strong> are just computers that have special software installed in order to exchange information). The centralized server is responsible for facilitating communication and synchronizing game state. Clients (users) send inputs like keystrokes, mouse movements, and clicks to the server. The server processes the input and updates the state of each player's character in the game world, and sends back the information about the current state of the game to all the clients. The clients then display the updated game.</p>
 <hr>
 
 <h2>Graphics Lag</h2>
@@ -34,12 +34,12 @@
 <hr>
 
 <h2>Latency Lag</h2>
-<p>The problem with networked games is that the data (which we call packets) has to travel to the server and come back to the client. Generally, the latency lag is the result of high latency (the time it takes for a packet to travel between client and server).</p>
+<p>The problem with networked games is that the data (which we call <strong>packets</strong>) has to travel to the server and come back to the client. Generally, the latency lag is the result of high latency (the time it takes for a packet to travel between client and server).</p>
 
 <h3>Identifying the Root Cause</h3>
 <h4>Ping</h4>
 <p>To reduce the latency lag, you first have to know what's causing the lag. The ping command is a good place to start.</p>
-<p>Ping is a useful software utility that allows you to test the status of the host (a computer connected to the network).</p>
+<p>Ping is a useful software utility that allows you to test the status of the <strong>host</strong> (a computer connected to the network).</p>
 <p>Type the following command in Windows cmd or Mac terminal</p>
 <pre>
 ping -n (-c on Mac) {number of packets} {destination}

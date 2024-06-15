@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.animation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes rotate {
+    to {transform: rotate(270deg)}
+}
+
+@keyframes fadeIn { from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+.background {
+    position: absolute;
+    height: 3000px;
+    width: 5px;
+    background-color: #555;
+    opacity: 10%;
+}
+
+#b1 {
+    bottom: -850px;
+    left: 50px;
+    animation: rotate 125s ease-in-out -25s infinite alternate;
+}
+
+#b2 {
+    bottom: -1050px;
+    right: 100px;
+    animation: rotate 125s ease-in-out -40s infinite alternate-reverse;
+}
+
+#b3 {
+    bottom: -1350px;
+    right: 350px;
+    animation: rotate 125s ease-in-out -50s infinite alternate;
+}
+
+.title {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+}
+
+.description-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 400px;
+    background-color: transparent;
+    transition: transform 2s;
+}
+
+#dw-left {
+    left:-375px;
+}
+
+#dw-right {
+    right:-375px;
+}
+
+#dw-left:hover {
+    transform: translateX(375px);
+}
+
+#dw-right:hover {
+    transform: translateX(-375px);
+}
+
+.trapezoid {
+    position: absolute;
+    border-bottom: 5px solid #555;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+#l1 {
+    right: -50px;
+    bottom: 50%;
+    transform: rotate(90deg);
+}
+
+#r1 {
+    left: -50px;
+    bottom: 50%;
+    transform: rotate(-90deg);
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #555;
+}
+
+#l2 {
+    right: -30px;
+    bottom: 50%;
+    transform: rotate(90deg);
+}
+
+#r2 {
+    left: -30px;
+    bottom: 50%;
+    transform: rotate(-90deg);
+}
+
+.description {
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    padding: 5 10 5 22;
+    background-color: #E7E7E7;
+    border-style: groove;
+    overflow: auto;
+}
+
+#center-elements {
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+    position: absolute;
+    border-radius: 25px;
+    height: 150px;;
+    width: 250px;
+    background-color: white;
+    text-align: center;
+    transition: all 1s;
+}
+
+
+#math-beauty {
+    margin-top: 100px; 
+}
+
+#importance {
+    margin-top: 275px;
+}
+
+#how {
+    margin-top: 450px;
+}
+
+.links:hover {
+    height: 160px;
+    width: 270px;
+    transform: translateY(-10px);
+}
+
+.adjust-size {
+    height: 100%;
+    width: 100%;
+}
+
+.top-gradient {
+    position: absolute;
+    height: 75px;
+    width: 338px;
+    background-image: linear-gradient(#E7E7E7, #E7E7E7, transparent);
+}
+
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    height: 75px;
+    width: 338px;
+    background-image: linear-gradient(transparent, #E7E7E7, #E7E7E7);
+}
